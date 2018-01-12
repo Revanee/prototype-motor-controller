@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Controller</title>
+</head>
+
+<body>
+	<script src="/socket.js"></script>
+	<script type="text/javascript">
+		const socket = io()
+		function sendCommand (event, val) {
+			socket.emit(event, val)
+		}
+	</script>
+    <div class="slidecontainer">
+        <input type="range" min="0" max="9" value="0" class="slider" oninput="sendCommand('speed', this.value)">
+        <input type="button" onmousedown="sendCommand('left', true)", onmouseup="sendCommand('left', false)" value="L">
+        <input type="button" onmousedown="sendCommand('right', true)" onmouseup="sendCommand('right', false)" value="R">
+    </div>
+</body>
+
+</html>

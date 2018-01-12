@@ -1,0 +1,16 @@
+{
+  "name": "controller",
+  "version": "1.0.0",
+  "description": "A UI and serial interface used to control motors through Arduino",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hristo Kamenov",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "serialport": "^6.0.4",
+    "socketio": "^1.0.0"
+  }
+}
