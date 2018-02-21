@@ -1,37 +1,37 @@
 class Arduino {
     constructor (port) {
         this.port = port
-        const arduino = this
+        const self = this
         
         this.motorSpeed = 255
 
         this.setSpeed = (val) => {
-            arduino.motorSpeed = val
+            self.motorSpeed = val
         }
         this.leftMotor = {
             funcID: 'ml',
             turnOn: () => {
-                arduino.sendData(arduino.leftMotor.funcID + arduino.motorSpeed)
+                self.sendData(self.leftMotor.funcID + self.motorSpeed)
             },
             trunOff: () => {
-                arduino.sendData(arduino.leftMotor.funcID + '0')
+                self.sendData(self.leftMotor.funcID + '0')
             }
         }
         this.rightMotor = {
             funcID: 'mr',
             turnOn: () => {
-                arduino.sendData(arduino.rightMotor.funcID + arduino.motorSpeed)
+                self.sendData(self.rightMotor.funcID + self.motorSpeed)
             },
             trunOff: () => {
-                arduino.sendData(arduino.rightMotor.funcID + '0')
+                self.sendData(self.rightMotor.funcID + '0')
             }
         }
         this.led = {
             turnOn: () => {
-                arduino.sendData('l1')
+                self.sendData('l1')
             },
             turnOff: () => {
-                arduino.sendData('l0')
+                self.sendData('l0')
             }
         }
     }
