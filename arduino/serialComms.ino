@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 bool debug = true;
 
 #define velocity 10
