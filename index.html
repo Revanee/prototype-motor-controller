@@ -9,16 +9,13 @@
 	<script src="/socket.js"></script>
 	<script type="text/javascript">
 		const socket = io()
-		function sendCommand (event, val) {
-			socket.emit(event, val)
-		}
 	</script>
     <div class="slidecontainer">
-        <input type="range" min="0" max="255" value="0" class="slider" oninput="sendCommand('speed', this.value)">
-        <input type="button" onmousedown="sendCommand('left', true)", onmouseup="sendCommand('left', false)" value="L">
-		<input type="button" onmousedown="sendCommand('right', true)" onmouseup="sendCommand('right', false)" value="R">
-		<input type="button" onmousedown="sendCommand('led', true)" value="Turn on LED">
-		<input type="button" onmousedown="sendCommand('led', false)" value="Turn off LED">
+        <input type="range" min="0" max="255" value="0" class="slider" oninput="socket.emit('speed', this.value)">
+        <input type="button" onmousedown="socket.emit('left', true)", onmouseup="socket.emit('left', false)" value="L">
+		<input type="button" onmousedown="socket.emit('right', true)" onmouseup="socket.emit('right', false)" value="R">
+		<input type="button" onmousedown="socket.emit('led', true)" value="Turn on LED">
+		<input type="button" onmousedown="socket.emit('led', false)" value="Turn off LED">
     </div>
 </body>
 
